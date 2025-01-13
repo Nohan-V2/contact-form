@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Karla", serif;
+    color: var(--grey-900);
+}
+
+:root {
+    /* Colors */
+    --grey-900: rgb(42, 65, 68);
+    --grey-500: rgb(134, 162, 165);
+    --white: rgb(255, 255, 255);
+    --green-600: rgb(12, 125, 105);
+    --green-200: rgb(224, 241, 232);
+    --red-error: rgb(215, 60, 60);
+
+    /* Spacings */
+    --1600: 128px;
+    --500: 40px;
+    --400: 32px;
+    --300: 24px;
+    --200: 16px;
+    --150: 12px;
+    --100: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.astrix {
+    color: var(--green-600);
+}
+
+.heading {
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -1px;
+    font-size: 32px;
+}
+
+.body-md-bold {
+    color: var(--white);
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.body-md-regular {
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.body-sm {
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"] {}
+
+textarea {}
+
+body {
+    background-color: var(--green-200);
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    padding: var(--500);
+    border-radius: var(--200);
+    display: flex;
+    flex-direction: column;
+    gap: var(--400);
+    background-color: var(--white);
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--300);
+}
+
+.radios-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--200);
+}
+
+.first-radio-button,
+.second-radio-button {
+    display: flex;
+    gap: var(--100);
+    align-items: center;
+}
