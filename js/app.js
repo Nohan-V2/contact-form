@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
   $inputFirstName.addEventListener("input", function (e) {
     console.log(e.target.value);
 
-    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+    firstName = e.target.value.replace(/[^a-zA-Z\s]/g, "");
 
-    if (e.target.value.length === 0 || e.target.value.length < 2) {
+    if (firstName.length === 0 || firstName.length < 2) {
       console.log("Ne peut pas être vide");
     } else {
       console.log("C'est bon");

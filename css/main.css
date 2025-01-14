@@ -31,10 +31,6 @@
     display: none !important;
 }
 
-.astrix {
-    color: var(--green-600);
-}
-
 .heading {
     font-weight: 700;
     line-height: 100%;
@@ -64,10 +60,29 @@
     font-size: 16px;
 }
 
-input[type="text"],
-input[type="email"] {}
+.astrix {
+    color: var(--green-600);
+}
 
-textarea {}
+input[type="text"],
+input[type="email"] {
+    border: 1px solid var(--grey-500);
+    color: var(--grey-900);
+    background-color: var(--white);
+    border-radius: var(--100);
+    padding: var(--150) var(--300);
+}
+
+textarea {
+    border: 1px solid var(--green-600);
+    color: var(--grey-900);
+    background-color: var(--white);
+    border-radius: var(--100);
+    padding: var(--150) var(--300);
+    resize: none;
+    min-height: 104px;
+    cursor: pointer;
+}
 
 body {
     background-color: var(--green-200);
@@ -95,6 +110,37 @@ body {
     gap: var(--300);
 }
 
+.name-wrapper {
+    display: flex;
+    gap: var(--200);
+}
+
+.first-name-container,
+.last-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--100);
+    width: 50%;
+    cursor: pointer;
+
+    :hover input[type="text"],
+    :focus input[type="text"] {
+        border-color: var(--green-600);
+    }
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--100);
+}
+
+.query-type-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--200);
+}
+
 .radios-buttons {
     display: flex;
     flex-direction: column;
@@ -106,4 +152,27 @@ body {
     display: flex;
     gap: var(--100);
     align-items: center;
+    width: 100%;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--100);
+}
+
+.checkbox-container {
+    display: flex;
+    gap: var(--200);
+}
+
+@media only screen and (min-width: 768px) {
+    .radios-buttons {
+        flex-direction: row;
+    }
+
+    .first-radio-button,
+    .second-radio-button {
+        width: 50%;
+    }
 }
