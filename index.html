@@ -22,8 +22,9 @@
                 id="first-name"
                 name="first-name"
                 placeholder="Enter your first name"
-                required
               />
+
+              <p class="first-name-error red hidden">This field is required</p>
             </div>
 
             <div class="last-name-container">
@@ -35,8 +36,9 @@
                 id="last-name"
                 name="last-name"
                 placeholder="Enter your last name"
-                required
               />
+
+              <p class="last-name-error red hidden">This field is required</p>
             </div>
           </div>
 
@@ -49,8 +51,11 @@
               id="email"
               name="email"
               placeholder="Enter your email"
-              required
             />
+
+            <p class="email-error red hidden">
+              Please enter a valid email address
+            </p>
           </div>
 
           <div class="query-type-wrapper">
@@ -81,6 +86,7 @@
                 >
               </div>
             </div>
+            <p class="radio-error red hidden">Please select a query type</p>
           </div>
 
           <div class="message-container">
@@ -91,12 +97,14 @@
               id="message"
               name="message"
               placeholder="Enter your message"
-              required
             ></textarea>
+            <p class="message-error red hidden">This field is required</p>
           </div>
         </section>
 
-        <section class="checkbox-container">
+        <section class="checkbox-wrapper"></section>
+
+        <div class="checkbox-container">
           <input
             type="checkbox"
             name="terms-and-conditions"
@@ -106,10 +114,29 @@
             >I agree to the terms and conditions
             <span class="astrix">*</span></label
           >
-        </section>
 
-        <button class="body-md-bold" type="submit">Submit</button>
+        </div>
+
+        <p class="checkbox-error red hidden">
+          To submit this form, please consent to being contacted
+        </p>
+
+      </section>
+
+        <button id="button" class="body-md-bold" type="submit">Submit</button>
       </form>
+    </div>
+
+    <div class="success-message hidden">
+      <div class="title-wrapper">
+        <img src="./assets/success.svg" alt="" />
+
+        <h2 class="body-md-bold">Message Sent!</h2>
+      </div>
+
+      <p class="body-sm">
+        Thanks for completing the form. We’ll be in touch soon!
+      </p>
     </div>
 
     <script src="./js/app.js"></script>

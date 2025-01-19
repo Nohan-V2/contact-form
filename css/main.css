@@ -14,6 +14,7 @@
     --grey-500: rgb(134, 162, 165);
     --white: rgb(255, 255, 255);
     --green-600: rgb(12, 125, 105);
+    --green-600-hover: #063f35;
     --green-200: rgb(224, 241, 232);
     --red-error: rgb(215, 60, 60);
 
@@ -27,8 +28,50 @@
     --100: 8px;
 }
 
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
 .hidden {
     display: none !important;
+}
+
+.red {
+    margin-top: var(--100);
+    color: var(--red-error) !important;
+}
+
+.red-input {
+    border-color: var(--red-error) !important;
+}
+
+.checkbox-error {
+    margin-top: -26px;
+}
+
+.success-message {
+    position: absolute;
+    background-color: var(--grey-900);
+    padding: var(--300);
+    top: 24px;
+    right: auto;
+    left: auto;
+    width: 90%;
+    max-width: 450px;
+    border-radius: var(--150);
+    display: flex;
+    flex-direction: column;
+    gap: var(--100);
+
+    .title-wrapper {
+        display: flex;
+        gap: 8px;
+    }
+
+    p {
+        color: var(--green-200);
+    }
 }
 
 .heading {
@@ -71,17 +114,52 @@ input[type="email"] {
     background-color: var(--white);
     border-radius: var(--100);
     padding: var(--150) var(--300);
+    outline: none;
+    cursor: pointer;
+    transition: all ease 0.2s;
+
+    &:hover,
+    &:focus {
+        border-color: var(--green-600);
+    }
 }
 
 textarea {
-    border: 1px solid var(--green-600);
+    border: 1px solid var(--grey-500);
     color: var(--grey-900);
     background-color: var(--white);
     border-radius: var(--100);
     padding: var(--150) var(--300);
     resize: none;
     min-height: 104px;
+    outline: none;
     cursor: pointer;
+    transition: all ease 0.2s;
+
+    &:hover,
+    &:focus {
+        border-color: var(--green-600);
+    }
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    background-color: var(--green-600);
+}
+
+button {
+    position: relative;
+    border: 0;
+    background-color: var(--green-600);
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: var(--100);
+    cursor: pointer;
+    transition: all ease 0.2s;
+
+    &:hover {
+        background-color: var(--green-600-hover);
+    }
 }
 
 body {
@@ -91,6 +169,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--400) var(--200);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--500);
 }
 
 .container {
@@ -112,6 +197,7 @@ body {
 
 .name-wrapper {
     display: flex;
+    flex-direction: column;
     gap: var(--200);
 }
 
@@ -120,13 +206,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--100);
-    width: 50%;
+    width: 100%;
     cursor: pointer;
-
-    :hover input[type="text"],
-    :focus input[type="text"] {
-        border-color: var(--green-600);
-    }
 }
 
 .email-container {
@@ -150,9 +231,25 @@ body {
 .first-radio-button,
 .second-radio-button {
     display: flex;
-    gap: var(--100);
+    gap: var(--150);
     align-items: center;
+    border: 1px solid var(--grey-500);
+    padding: var(--150) var(--300) var(--150) var(--300);
+    border-radius: var(--100);
     width: 100%;
+
+    &:hover {
+        color: var(--green-600);
+    }
+
+    &:focus {
+        color: var(--green-600);
+        background-color: var(--green-200);
+    }
+
+    &:checked {
+        border-color: var(--green-600);
+    }
 }
 
 .message-container {
@@ -167,6 +264,15 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+    .name-wrapper {
+        flex-direction: row;
+    }
+
+    .first-name-container,
+    .last-name-container {
+        width: 50%;
+    }
+
     .radios-buttons {
         flex-direction: row;
     }
